@@ -1,0 +1,340 @@
+```css
+/* =========================================
+   RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   CUERPO
+========================================= */
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+
+  background:
+    radial-gradient(circle at top left, #fff8ed, transparent 35%),
+    linear-gradient(135deg, #fff6ec, #ffe0b2);
+
+  min-height: 100vh;
+
+  padding: 25px;
+
+  color: #4a3425;
+}
+
+
+/* =========================================
+   BOTÓN VOLVER
+========================================= */
+
+.volver {
+  display: inline-block;
+
+  padding: 12px 22px;
+
+  background: #8b5e3c;
+
+  color: white;
+
+  text-decoration: none;
+
+  border-radius: 25px;
+
+  font-weight: bold;
+
+  box-shadow: 0 5px 12px rgba(80, 45, 20, 0.2);
+
+  transition: 0.3s;
+}
+
+.volver:hover {
+  background: #c17f4a;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.encabezado {
+  text-align: center;
+
+  max-width: 850px;
+
+  margin: 35px auto 45px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  padding: 30px;
+
+  border-radius: 30px;
+
+  border: 4px solid #d99a5b;
+
+  box-shadow:
+    0 12px 30px rgba(80, 45, 20, 0.15);
+}
+
+
+/* HUELLAS */
+
+.huella {
+  font-size: 25px;
+
+  letter-spacing: 10px;
+
+  margin-bottom: 10px;
+}
+
+
+/* TÍTULO */
+
+.encabezado h1 {
+  color: #704522;
+
+  font-size: 42px;
+
+  margin-bottom: 12px;
+
+  text-shadow: 2px 2px 0 #ffe0b2;
+}
+
+
+/* DESCRIPCIÓN */
+
+.encabezado p {
+  color: #7b5a42;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   CONTENEDOR DE VIDEOS
+========================================= */
+
+.contenedor {
+  width: 1200px;
+
+  max-width: 100%;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 28px;
+
+  align-items: stretch;
+}
+
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.card {
+  background: rgba(255, 255, 255, 0.97);
+
+  border: 3px solid #d99a5b;
+
+  border-radius: 25px;
+
+  padding: 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  box-shadow:
+    0 10px 25px rgba(80, 45, 20, 0.15);
+
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s,
+    border-color 0.3s;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.card:hover {
+  transform: translateY(-8px);
+
+  border-color: #a86f42;
+
+  box-shadow:
+    0 18px 35px rgba(80, 45, 20, 0.25);
+}
+
+
+/* =========================================
+   TÍTULO DE CADA VIDEO
+========================================= */
+
+.card h2 {
+  text-align: center;
+
+  color: #704522;
+
+  font-size: 23px;
+
+  margin-bottom: 15px;
+
+  min-height: 30px;
+}
+
+
+/* =========================================
+   CONTENEDOR DEL VIDEO
+========================================= */
+
+.video {
+  width: 100%;
+
+  background: #000;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 6px 15px rgba(0, 0, 0, 0.2);
+
+  margin-bottom: 15px;
+}
+
+
+/* =========================================
+   VIDEO COMPLETO
+========================================= */
+
+.video video {
+  display: block;
+
+  width: 100%;
+
+  height: 300px;
+
+  object-fit: contain;
+
+  background: #000;
+
+  border-radius: 18px;
+}
+
+
+/* =========================================
+   DESCRIPCIÓN
+========================================= */
+
+.card > p {
+  color: #6d5543;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  text-align: center;
+
+  margin-top: auto;
+
+  padding: 5px 5px 2px;
+}
+
+
+/* =========================================
+   PIE DE PÁGINA
+========================================= */
+
+footer {
+  text-align: center;
+
+  margin-top: 50px;
+
+  padding: 25px;
+
+  color: #704522;
+
+  font-weight: bold;
+
+  font-size: 15px;
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .contenedor {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .video video {
+    height: 300px;
+  }
+
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 650px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .encabezado {
+    padding: 25px 18px;
+
+    margin-top: 25px;
+  }
+
+  .encabezado h1 {
+    font-size: 30px;
+  }
+
+  .encabezado p {
+    font-size: 15px;
+  }
+
+  .contenedor {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .video video {
+    width: 100%;
+
+    height: auto;
+
+    min-height: 250px;
+
+    object-fit: contain;
+
+    background: #000;
+  }
+
+  .volver {
+    font-size: 14px;
+  }
+
+}
+```

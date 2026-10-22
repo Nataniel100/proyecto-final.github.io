@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIP | Patitas Geniales</title>
+  <link rel="stylesheet" href="vip.css">
+</head>
+
+<body>
+
+<a href="index.html" class="volver">⬅ Volver al inicio</a>
+
+<header>
+  <div class="titulo">
+    <h1>👑 Sala VIP</h1>
+
+    <p>
+      Descubre comandos especiales y poco comunes para llevar
+      el entrenamiento de tu cachorro a otro nivel.
+    </p>
+  </div>
+</header>
+
+
+<main class="contenedor">
+
+  <!-- COMANDO 1 -->
+  <section class="comando-vip">
+    <div class="icono">🐾</div>
+
+    <h2>Gatear</h2>
+
+    <p>
+      Enseña a tu cachorro a desplazarse por el suelo manteniendo
+      su cuerpo agachado.
+    </p>
+  </section>
+
+
+  <!-- COMANDO 2 -->
+  <section class="comando-vip">
+    <div class="icono">🐾</div>
+
+    <h2>Adivinar</h2>
+
+    <p>
+      Un divertido ejercicio en el que el cachorro debe descubrir
+      en cuál de las manos se encuentra su comida.
+    </p>
+  </section>
+
+
+  <!-- COMANDO 3 -->
+  <section class="comando-vip">
+    <div class="icono">🐾</div>
+
+    <h2>El muerto</h2>
+
+    <p>
+      Enseña al cachorro a permanecer acostado de lado durante
+      unos segundos siguiendo una señal.
+    </p>
+  </section>
+
+
+  <!-- COMANDO 4 -->
+  <section class="comando-vip">
+    <div class="icono">🐾</div>
+
+    <h2>Vuelta en el piso</h2>
+
+    <p>
+      Una variación del comando vuelta en la que el cachorro
+      realiza el giro mientras permanece sobre el piso.
+    </p>
+  </section>
+
+
+  <!-- =================================
+       SECCIÓN DE PAGO
+  ================================= -->
+
+  <section class="pago">
+
+    <div class="corona">👑</div>
+
+    <h2>Accede a todos los comandos VIP</h2>
+
+    <p>
+      Obtén acceso a las explicaciones completas, pasos de entrenamiento
+      y videos exclusivos.
+    </p>
+
+    <div class="precio">
+      Bs. 25
+    </div>
+
+    <button onclick="mostrarPago()">
+      💳 Pagar y entrar
+    </button>
+
+
+    <!-- PANEL DE PAGO -->
+
+    <div id="panelPago" class="panel-pago">
+
+      <h3>📲 Realiza tu pago</h3>
+
+      <p>
+        Escanea el QR o utiliza el número indicado.
+      </p>
+
+      <div class="datos-pago">
+
+        <strong>Número de pago</strong>
+
+        <span>72503587</span>
+
+        <small>Precio: Bs. 25</small>
+
+      </div>
+
+
+      <!-- QR -->
+
+      <div class="qr">
+
+        <img
+          src="img/qr_pago.png"
+          alt="QR de pago"
+        >
+
+      </div>
+
+
+      <p class="nota">
+        Escanea el código QR para realizar el pago.
+      </p>
+
+
+      <button
+        class="confirmar"
+        onclick="confirmarPago()"
+      >
+        ✅ Ya realicé el pago
+      </button>
+
+
+      <button
+        class="cancelar"
+        onclick="cerrarPago()"
+      >
+        Cancelar
+      </button>
+
+    </div>
+
+
+    <!-- RESULTADO -->
+
+    <div id="resultado" class="resultado">
+
+      <div class="check">
+        ✅
+      </div>
+
+      <h3>Pago registrado</h3>
+
+      <p>
+        Tu acceso VIP ha sido registrado correctamente.
+      </p>
+
+      <div class="codigo">
+
+        <span>Tu código VIP</span>
+
+        <strong id="codigoGenerado">
+          0000
+        </strong>
+
+      </div>
+
+      <p class="guardar">
+        ⚠️ Guarda este código. Lo necesitarás para
+        volver a entrar a la sección VIP.
+      </p>
+
+
+      <!-- WHATSAPP -->
+
+      <a
+        id="whatsapp"
+        class="whatsapp"
+        target="_blank"
+      >
+        📲 Enviar registro
+      </a>
+
+
+      <button
+        class="entrar"
+        onclick="entrarVIP()"
+      >
+        🔐 Entrar a VIP
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       INGRESAR CON CÓDIGO
+  ================================= -->
+
+  <section class="acceso">
+
+    <div class="icono-acceso">
+      🔐
+    </div>
+
+    <h2>Ingresar con código VIP</h2>
+
+    <p>
+      Si ya realizaste el pago, introduce tu código
+      de 4 dígitos para acceder.
+    </p>
+
+
+    <input
+      type="text"
+      id="codigoIngresado"
+      maxlength="4"
+      inputmode="numeric"
+      placeholder="0000"
+    >
+
+
+    <button onclick="verificarCodigo()">
+      🔓 Acceder
+    </button>
+
+
+    <div id="mensaje"></div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  👑 Patitas Geniales VIP — Comandos especiales 🐾
+</footer>
+
+
+
+<script>
+
+/* =========================================
+   MOSTRAR PAGO
+========================================= */
+
+function mostrarPago() {
+
+  document.getElementById("panelPago").style.display = "block";
+
+  document.getElementById("resultado").style.display = "none";
+
+}
+
+
+/* =========================================
+   CERRAR PAGO
+========================================= */
+
+function cerrarPago() {
+
+  document.getElementById("panelPago").style.display = "none";
+
+}
+
+
+/* =========================================
+   GENERAR CÓDIGO DE 4 DÍGITOS
+========================================= */
+
+function generarCodigo() {
+
+  return Math.floor(
+    1000 + Math.random() * 9000
+  ).toString();
+
+}
+
+
+/* =========================================
+   CONFIRMAR PAGO
+========================================= */
+
+function confirmarPago() {
+
+  const codigo = generarCodigo();
+
+
+  /* Guardar código */
+
+  localStorage.setItem(
+    "codigoVIP",
+    codigo
+  );
+
+
+  /* Guardar estado */
+
+  localStorage.setItem(
+    "pagoVIP",
+    "registrado"
+  );
+
+
+  /* Mostrar código */
+
+  document.getElementById(
+    "codigoGenerado"
+  ).textContent = codigo;
+
+
+  /* Preparar WhatsApp */
+
+  const texto =
+    "🐾 PATITAS GENIALES VIP%0A%0A" +
+    "✅ Pago VIP registrado%0A" +
+    "💰 Monto: Bs. 25%0A" +
+    "📱 Número: 72503587%0A" +
+    "🔐 Código VIP: " + codigo;
+
+
+  document.getElementById(
+    "whatsapp"
+  ).href =
+    "https://wa.me/59172503587?text=" + texto;
+
+
+  /* Cambiar panel */
+
+  document.getElementById(
+    "panelPago"
+  ).style.display = "none";
+
+
+  document.getElementById(
+    "resultado"
+  ).style.display = "block";
+
+}
+
+
+/* =========================================
+   ENTRAR A VIP
+========================================= */
+
+function entrarVIP() {
+
+  const codigo =
+    localStorage.getItem("codigoVIP");
+
+
+  if (codigo) {
+
+    window.location.href =
+      "vip_entrada.html";
+
+  }
+
+}
+
+
+/* =========================================
+   VERIFICAR CÓDIGO
+========================================= */
+
+function verificarCodigo() {
+
+  const ingresado =
+    document.getElementById(
+      "codigoIngresado"
+    ).value;
+
+
+  const guardado =
+    localStorage.getItem("codigoVIP");
+
+
+  const mensaje =
+    document.getElementById(
+      "mensaje"
+    );
+
+
+  if (ingresado === guardado && guardado !== null) {
+
+    mensaje.textContent =
+      "✅ Código correcto. Accediendo...";
+
+    mensaje.className = "correcto";
+
+
+    setTimeout(function() {
+
+      window.location.href =
+        "vip_entrada.html";
+
+    }, 800);
+
+
+  } else {
+
+    mensaje.textContent =
+      "❌ Código incorrecto.";
+
+    mensaje.className = "error";
+
+  }
+
+}
+
+
+/* =========================================
+   RECUPERAR CÓDIGO GUARDADO
+========================================= */
+
+window.onload = function() {
+
+  const codigo =
+    localStorage.getItem("codigoVIP");
+
+
+  if (codigo) {
+
+    document.getElementById(
+      "resultado"
+    ).style.display = "block";
+
+
+    document.getElementById(
+      "codigoGenerado"
+    ).textContent = codigo;
+
+
+    const texto =
+      "🐾 PATITAS GENIALES VIP%0A%0A" +
+      "✅ Registro VIP%0A" +
+      "🔐 Código VIP: " + codigo;
+
+
+    document.getElementById(
+      "whatsapp"
+    ).href =
+      "https://wa.me/59172503587?text=" + texto;
+
+  }
+
+};
+
+</script>
+
+</body>
+</html>

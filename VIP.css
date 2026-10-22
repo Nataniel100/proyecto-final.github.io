@@ -1,0 +1,400 @@
+```css
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: radial-gradient(circle at top, #7209b7, #240046);
+  min-height: 100vh;
+  padding: 30px;
+  color: white;
+}
+
+/* BOTÓN VOLVER */
+.volver {
+  display: inline-block;
+  padding: 12px 24px;
+  background: white;
+  color: #5a189a;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.volver:hover {
+  transform: scale(1.05);
+}
+
+/* ENCABEZADO */
+header {
+  text-align: center;
+  margin: 35px 0;
+}
+
+.titulo {
+  max-width: 850px;
+  margin: auto;
+  padding: 35px;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.titulo h1 {
+  color: #5a189a;
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.titulo p {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* CONTENEDOR */
+.contenedor {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+/* COMANDOS */
+.comando-vip {
+  background: white;
+  color: #444;
+  padding: 30px;
+  border-radius: 25px;
+  text-align: center;
+  border-top: 8px solid #ffb703;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  transition: 0.3s;
+}
+
+.comando-vip:hover {
+  transform: translateY(-7px);
+}
+
+.icono {
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+
+.comando-vip h2 {
+  color: #5a189a;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.comando-vip p {
+  line-height: 1.6;
+  color: #666;
+}
+
+/* SECCIÓN DE PAGO */
+.pago {
+  grid-column: 1 / -1;
+  background: white;
+  color: #444;
+  text-align: center;
+  margin-top: 25px;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  border: 4px solid #ffb703;
+}
+
+.corona {
+  font-size: 65px;
+}
+
+.pago h2 {
+  color: #5a189a;
+  font-size: 30px;
+  margin: 15px 0;
+}
+
+.pago p {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.precio {
+  color: #fb8500;
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* BOTÓN DE PAGO */
+.pago button {
+  border: none;
+  padding: 16px 35px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ffb703, #fb8500);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pago button:hover {
+  transform: scale(1.08);
+}
+
+/* PANEL DE PAGO */
+.panel-pago {
+  display: none;
+  background: #f8f8f8;
+  color: #444;
+  max-width: 600px;
+  margin: 30px auto 0;
+  padding: 30px;
+  border-radius: 25px;
+  border: 3px solid #ffb703;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.panel-pago h3 {
+  color: #5a189a;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.panel-pago p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* DATOS DE PAGO */
+.datos-pago {
+  background: #eee;
+  padding: 18px;
+  border-radius: 15px;
+  margin: 20px 0;
+}
+
+.datos-pago strong {
+  color: #5a189a;
+}
+
+/* QR */
+.qr {
+  margin: 20px auto;
+  padding: 15px;
+  background: white;
+  border-radius: 15px;
+  width: fit-content;
+  border: 2px solid #ddd;
+}
+
+.qr img {
+  display: block;
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+}
+
+/* BOTÓN CONFIRMAR */
+.boton-confirmar {
+  display: inline-block;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 25px;
+  background: #5a189a;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.boton-confirmar:hover {
+  background: #7b2cbf;
+  transform: scale(1.05);
+}
+
+/* BOTÓN WHATSAPP */
+.whatsapp {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 25px;
+  border-radius: 25px;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.whatsapp:hover {
+  transform: scale(1.05);
+  background: #1ebe5d;
+}
+
+/* RESULTADO */
+.resultado {
+  display: none;
+  margin-top: 25px;
+  padding: 25px;
+  background: #f1fff4;
+  border: 3px solid #25a244;
+  border-radius: 20px;
+  color: #333;
+}
+
+.resultado h3 {
+  color: #16803c;
+  margin-bottom: 12px;
+}
+
+.codigo {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 12px 25px;
+  background: #5a189a;
+  color: white;
+  border-radius: 15px;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 6px;
+}
+
+/* ACCESO VIP */
+.acceso-vip {
+  display: none;
+  grid-column: 1 / -1;
+  background: white;
+  color: #444;
+  text-align: center;
+  padding: 35px;
+  border-radius: 30px;
+  border: 4px solid #5a189a;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.acceso-vip h2 {
+  color: #5a189a;
+  margin-bottom: 15px;
+}
+
+.acceso-vip p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* INPUT DEL CÓDIGO */
+.codigo-input {
+  width: 180px;
+  padding: 14px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 5px;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+.codigo-input:focus {
+  border-color: #5a189a;
+}
+
+/* BOTÓN ENTRAR */
+.boton-entrar {
+  display: block;
+  margin: 0 auto;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 25px;
+  background: #5a189a;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.boton-entrar:hover {
+  background: #7b2cbf;
+  transform: scale(1.05);
+}
+
+/* MENSAJES */
+.mensaje {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.exito {
+  color: #16803c;
+}
+
+.error {
+  color: #c1121f;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 25px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+
+  body {
+    padding: 15px;
+  }
+
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .pago,
+  .acceso-vip {
+    grid-column: auto;
+  }
+
+  .titulo {
+    padding: 25px 18px;
+  }
+
+  .titulo h1 {
+    font-size: 35px;
+  }
+
+  .titulo p {
+    font-size: 16px;
+  }
+
+  .comando-vip {
+    padding: 25px 18px;
+  }
+
+  .pago {
+    padding: 30px 18px;
+  }
+
+  .qr img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .codigo {
+    font-size: 25px;
+  }
+}
+```
